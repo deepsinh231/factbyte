@@ -1,13 +1,12 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Provider } from 'react-redux'
-import { Dashboard } from './Page/index.js'
+import { Dashboard, Mobile360 } from './Page/index.js'
 import { DashboardRout } from './Components/index.js'
 import Store from './Store/Store.js'
 import {
   createBrowserRouter,
-  Navigate,
   RouterProvider,
 } from "react-router-dom";
 
@@ -17,8 +16,12 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "mobile-360",
+        path: "/",
         element: <DashboardRout />,
+      },
+      {
+        path: "/mobile-360",
+        element: <Mobile360 />,
       }
     ]
   },

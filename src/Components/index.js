@@ -4,4 +4,4 @@ import Navlink from "./Navlink.jsx";
 import DeshboardCard from "./DeshboardCard.jsx";
 import DashboardRout from "./DashboardRout.jsx";
 
-export { Login,Navlink,DeshboardCard, Headers,DashboardRout };
+export { Login, Navlink, DeshboardCard, DashboardRout, Headers };
