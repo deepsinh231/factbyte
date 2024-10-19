@@ -1,17 +1,21 @@
 // src/components/PhoneSearch.js
 
-import  { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchPhoneNumber } from '../Store/PhoneReducer';
+import { TBSelector, Mobile360 } from '../Store/Reducers/TBSlice';
 
 const PhoneSearch = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [searchNumber, setsearchNumber] = useState('');
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector((state) => state.phone);
+  const { Mobile360Data } = useSelector(TBSelector);
+  useEffect(() => {
+    console.log("UsersigninData>>>",Mobile360Data);
+
+  }, [Mobile360Data])
 
   const handleSearch = () => {
-    if (phoneNumber.length === 10) {
-      dispatch(searchPhoneNumber(phoneNumber));
+    if (searchNumber.length === 10) {
+      dispatch(Mobile360(searchNumber));
     } else {
       alert('Please enter a valid 10-digit phone number');
     }
@@ -23,8 +27,8 @@ const PhoneSearch = () => {
       <div className="flex">
         <input
           type="text"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          value={searchNumber}
+          onChange={(e) => setsearchNumber(e.target.value)}
           placeholder="Enter 10-digit phone number"
           className="border p-2 rounded"
         />
@@ -33,14 +37,14 @@ const PhoneSearch = () => {
         </button>
       </div>
 
-      {loading && <p>Loading...</p>}
+      {/* {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}
       {data && (
         <div className="mt-4">
           <h2 className="text-xl">Search Result:</h2>
           <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import './index.css'
 import { Provider } from 'react-redux'
 import { Dashboard, Mobile360 } from './Page/index.js'
 import { DashboardRout } from './Components/index.js'
-import Store from './Store/Store.js'
+import Store from './Store'
 import {
   createBrowserRouter,
   RouterProvider,
