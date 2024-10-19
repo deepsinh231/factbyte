@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background-hed {
+    background-image: linear-gradient(to right, #EF5437, #DD2277);
+    width: 100%;
+    padding: 20px 30px;
+    height: 150px;
+    clip-path: polygon(100% 0, 100% 50%, 23% 50%, 20% 100%, 0 100%, 0 0);
+}
+
+.top-repsoch {
+    top: 90px;
+}
+
+.fact-logo {
+    width: clamp(8rem, 15vw, 16rem);
+    height: 100px;
+}
+
+.scroll-a::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+.scroll-a::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+@media only screen and (max-width: 668px) {
+    .background-hed {
+        background-image: linear-gradient(to right, #EF5437, #DD2277);
+        width: 100%;
+        height: 130px;
+        padding: 15px 15px;
+        clip-path: polygon(100% 0, 100% 50%, 32% 50%, 25% 100%, 0 100%, 0 0);
+    }
+
+    .fact-logo {
+        width: clamp(3rem, 20vw, 16rem);
+    }
+
+    .top-repsoch {
+        top: 70px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .background-hed {
+        height: 120px;
+    }
+
+    .fact-logo {
+        width: clamp(3rem, 20vw, 16rem);
+        height: auto;
+    }
+
+}
